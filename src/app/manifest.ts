@@ -1,6 +1,5 @@
 import { MetadataRoute } from 'next'
 
-import { env } from "@/env.mjs"
 import { siteConfig } from "@/config/site"
 
 export default function manifest(): MetadataRoute.Manifest {
@@ -22,7 +21,7 @@ export default function manifest(): MetadataRoute.Manifest {
     related_applications: [
       {
         platform: 'web',
-        url: env.NEXT_PUBLIC_APP_URL || 'https://www.sableon.com',
+        url: siteConfig.url.base,
       },
     ],
   }
