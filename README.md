@@ -1,15 +1,15 @@
-# Cadogy Agency
+# Sableon Agency
 
 <div align="center">
-  <img src="/public/images/cadogy_agency_frontend.jpg" alt="Cadogy Agency Frontend" />
-  <img src="/public/images/cadogy_agency_dashboard.png" alt="Cadogy Agency Backend" />
-  <img src="/public/images/cadogy_agency_email.png" alt="Cadogy Agency Emails" />
-  <p>Developed by <a href="https://www.cadogy.com">Cadogy</a></p>
+  <img src="/public/images/sableon_agency_frontend.jpg" alt="Sableon Agency Frontend" />
+  <img src="/public/images/sableon_agency_dashboard.png" alt="Sableon Agency Backend" />
+  <img src="/public/images/sableon_agency_email.png" alt="Sableon Agency Emails" />
+  <p>Developed by <a href="https://www.sableon.com">Sableon</a></p>
 </div>
 
-## About Cadogy Agency
+## About Sableon Agency
 
-A modern, responsive, and feature-rich web application for Cadogy Agency built with Next.js 14+, TypeScript, and a headless WordPress CMS integration. The platform includes comprehensive user authentication, email verification, API management, and a rich interactive UI experience.
+A modern, responsive, and feature-rich web application for Sableon Agency built with Next.js 14+, TypeScript, and a headless WordPress CMS integration. The platform includes comprehensive user authentication, email verification, API management, and a rich interactive UI experience.
 
 ## Features
 
@@ -94,8 +94,8 @@ A modern, responsive, and feature-rich web application for Cadogy Agency built w
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-org/cadogy-fs.git
-cd cadogy-fs
+git clone https://github.com/your-org/sableon-fs.git
+cd sableon-fs
 ```
 
 2. Install dependencies:
@@ -187,7 +187,7 @@ For Cloudflare integration:
 
 MIT License
 
-Copyright (c) 2026 Cadogy
+Copyright (c) 2026 Sableon
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

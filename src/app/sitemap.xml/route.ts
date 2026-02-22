@@ -1,14 +1,11 @@
 import { NextResponse } from 'next/server'
 import { env } from "@/env.mjs"
 
-const baseUrl = env.NEXT_PUBLIC_APP_URL || 'https://www.cadogy.com'
+const baseUrl = env.NEXT_PUBLIC_APP_URL || 'https://www.sableon.com'
 
 export async function GET() {
-  console.log('🗺️ Generating main sitemap.xml...')
-  
   const currentDate = new Date().toISOString()
-  
-  // Define all the static routes
+
   const staticRoutes = [
     {
       url: `${baseUrl}`,
@@ -21,18 +18,6 @@ export async function GET() {
       lastmod: currentDate,
       changefreq: 'monthly',
       priority: '0.8',
-    },
-    {
-      url: `${baseUrl}/the-api`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '0.8',
-    },
-    {
-      url: `${baseUrl}/the-api/features`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '0.7',
     },
     {
       url: `${baseUrl}/contact`,
@@ -52,15 +37,8 @@ export async function GET() {
       changefreq: 'yearly',
       priority: '0.5',
     },
-    {
-      url: `${baseUrl}/articles`,
-      lastmod: currentDate,
-      changefreq: 'daily',
-      priority: '0.9',
-    },
   ]
 
-  // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${staticRoutes.map(route => `  <url>
@@ -71,13 +49,10 @@ ${staticRoutes.map(route => `  <url>
   </url>`).join('\n')}
 </urlset>`
 
-  console.log(`✅ Main sitemap generated with ${staticRoutes.length} static URLs`)
-  
-  // Return XML response
   return new NextResponse(xml, {
     headers: {
       'Content-Type': 'application/xml',
       'Cache-Control': 'public, max-age=3600, s-maxage=3600'
     }
   })
-} 
+}

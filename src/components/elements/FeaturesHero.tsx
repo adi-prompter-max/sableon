@@ -17,7 +17,7 @@ export function FeaturesHero() {
             transition={{ duration: 0.5 }}
             className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl"
           >
-            The API by Cadogy
+            The API by Sableon
           </motion.h1>
 
           <motion.p

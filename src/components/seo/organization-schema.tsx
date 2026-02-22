@@ -2,50 +2,53 @@ export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Cadogy",
-    "alternateName": "Cadogy Web Development",
-    "url": "https://www.cadogy.com",
-    "logo": "https://www.cadogy.com/images/assets/logos/cadogy-shield.svg",
-    "description": "Crafting exceptional digital experiences through innovative web development, secure infrastructure, and custom solutions for businesses in South Florida and beyond.",
+    "name": "Sableon",
+    "alternateName": "Sableon Agency",
+    "url": process.env.NEXT_PUBLIC_APP_URL || "https://www.sableon.com",
+    "logo": `${process.env.NEXT_PUBLIC_APP_URL || "https://www.sableon.com"}/images/assets/logos/sableon-logo.svg`,
+    "description": "Helping startups and modern businesses turn ideas into scalable digital products. From discovery and UX to MVP delivery, full-stack engineering, and AI-first product development.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "3801 N Capital Of Texas Hwy Ste E240-180",
-      "addressLocality": "Austin",
-      "addressRegion": "TX",
-      "postalCode": "78746-1416",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 30.3508,
-      "longitude": -97.7968
+      "addressCountry": "IN"
     },
     "sameAs": [
-      "https://www.instagram.com/cadogyweb",
-      "https://www.github.com/cadogy",
-      "https://www.linkedin.com/company/cadogy"
+      "https://www.instagram.com/sableon",
+      "https://www.github.com/sableon",
+      "https://www.linkedin.com/company/sableon"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "hello@cadogy.com",
+      "email": "hello@sableon.com",
       "contactType": "Customer Service",
       "availableLanguage": "English"
     },
     "founder": [
       {
         "@type": "Person",
-        "name": "Charles Knapp",
-        "jobTitle": "Co-Founder & Lead Developer"
+        "name": "Gautam Chauhan",
+        "jobTitle": "Co-Founder & CEO"
+      },
+      {
+        "@type": "Person",
+        "name": "Keshav Chauhan",
+        "jobTitle": "Co-Founder & CTO"
+      },
+      {
+        "@type": "Person",
+        "name": "Aditya Pratap Singh",
+        "jobTitle": "Co-Founder & COO"
       },
     ],
-    "foundingDate": "2020",
+    "foundingDate": "2025",
     "knowsAbout": [
-      "Web Development",
-      "Cybersecurity",
-      "Digital Rights Management",
-      "Custom Software Solutions",
-      "API Development",
-      "Cloud Infrastructure"
+      "Product Development",
+      "Full-Stack Engineering",
+      "MVP Development",
+      "UX/UI Design",
+      "AI Product Development",
+      "LLM Application Development",
+      "Cloud Infrastructure",
+      "Intelligent Automation"
     ]
   }
 

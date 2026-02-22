@@ -2,7 +2,6 @@ import "@/styles/globals.css"
 
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
-import { SessionProvider } from "@/providers/SessionProvider"
 import { ToastProvider } from "@/providers/toast-provider"
 import NextTopLoader from "nextjs-toploader"
 
@@ -30,156 +29,67 @@ export const viewport: Viewport = {
   maximumScale: 5,
 }
 
-// Cache configuration - on-demand revalidation only
-export const revalidate = false
-export const fetchCache = "force-cache"
-export const dynamicParams = true
-
-export async function generateMetadata({
-  params,
-  searchParams,
-}: {
-  params: { slug?: string }
-  searchParams: Record<string, string | string[] | undefined>
-}): Promise<Metadata> {
-  const isHomePage = !params.slug
-
-  const { getSiteSettings } = await import("@/lib/get-site-settings")
-  const dynamicSettings = await getSiteSettings()
-
-  const baseMetadata: Metadata = {
-    metadataBase: new URL(siteConfig.url.base),
-    title: {
-      default: `${dynamicSettings.siteName} - ${dynamicSettings.siteSlogan}`,
-      template: `%s`,
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url.base),
+  title: {
+    default: `${siteConfig.name} - ${siteConfig.slogan}`,
+    template: `%s`,
+  },
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [
+    {
+      name: siteConfig.author,
+      url: siteConfig.url.author,
     },
-    description: dynamicSettings.siteDescription,
-    keywords: siteConfig.keywords,
-    authors: [
+  ],
+  creator: siteConfig.author,
+  publisher: siteConfig.name,
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url.base,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: [
       {
-        name: siteConfig.author,
-        url: siteConfig.url.author,
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
       },
     ],
-    creator: siteConfig.author,
-    publisher: siteConfig.name,
-    formatDetection: {
-      telephone: true,
-      email: true,
-      address: true,
-    },
-    openGraph: {
-      type: "website",
-      locale: "en_US",
-      url: siteConfig.url.base,
-      title: dynamicSettings.siteName,
-      description: dynamicSettings.siteDescription,
-      siteName: dynamicSettings.siteName,
-      images: [
-        {
-          url: siteConfig.ogImage,
-          width: 1200,
-          height: 630,
-          alt: siteConfig.name,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: dynamicSettings.siteName,
-      description: dynamicSettings.siteDescription,
-      images: [siteConfig.ogImage],
-      creator: "@_rdev7",
-    },
-    icons: {
-      icon: "/favicon.ico",
-      shortcut: "/favicon.ico",
-      apple: "/favicon.ico",
-    },
-    alternates: {
-      canonical: siteConfig.url.base,
-    },
-    robots: {
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+  alternates: {
+    canonical: siteConfig.url.base,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
       index: true,
       follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
-    verification: {
-      google: "verification_token",
-    },
-  }
-
-  // For non-homepage routes, return the base metadata
-  if (!isHomePage) {
-    return baseMetadata
-  }
-
-  // For homepage, enhance with WordPress data
-  try {
-    // Import API functions only in server context
-    const { getPosts, getTags, decodeHtml } = await import(
-      "@/lib/wordpress-api"
-    )
-
-    // Fetch latest posts for metadata enhancement
-    const { posts } = await getPosts({ page: 1, perPage: 3 })
-    const tags = await getTags()
-
-    // Get trending topics from tags
-    const trendingTopics = tags
-      .filter((tag) => tag.count > 0)
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 5)
-      .map((tag) => tag.name)
-
-    // Enhanced description with latest content
-    const enhancedDescription =
-      posts.length > 0
-        ? `${siteConfig.description} Read our latest insights on ${trendingTopics.slice(0, 3).join(", ")}, and more.`
-        : siteConfig.description
-
-    // Enhanced keywords with trending topics
-    const enhancedKeywords = [
-      "Cadogy",
-      "cybersecurity",
-      "web development",
-      "digital rights management",
-      ...trendingTopics,
-      "technology",
-    ]
-
-    // Featured image from latest post if available
-    const featuredImage =
-      posts[0]?._embedded?.["wp:featuredmedia"]?.[0]?.source_url
-
-    // Return enhanced metadata for homepage
-    return {
-      ...baseMetadata,
-      description: enhancedDescription,
-      keywords: enhancedKeywords,
-      openGraph: {
-        ...baseMetadata.openGraph,
-        description: enhancedDescription,
-        images: featuredImage
-          ? [{ url: featuredImage, alt: siteConfig.name }]
-          : baseMetadata.openGraph?.images,
-      },
-      twitter: {
-        ...baseMetadata.twitter,
-        description: enhancedDescription,
-        images: featuredImage ? [featuredImage] : baseMetadata.twitter?.images,
-      },
-    }
-  } catch (error) {
-    // If WordPress data fetching fails, fallback to base metadata
-    console.error("Error fetching WordPress data for metadata:", error)
-    return baseMetadata
-  }
+  },
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
@@ -191,7 +101,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           inter.className
         )}
       >
-        {/* SEO: Organization Schema - applies to all pages */}
         <OrganizationSchema />
 
         <ThemeProvider
@@ -200,25 +109,23 @@ export default function RootLayout({ children }: RootLayoutProps) {
           enableSystem
           disableTransitionOnChange
         >
-          <SessionProvider>
-            <NextTopLoader
-              color="#60a5fa"
-              initialPosition={0.08}
-              height={3}
-              showSpinner={false}
-              easing="ease"
-              speed={200}
-            />
-            <NavigationMenu />
-            <ToastProvider autoDismissTimeout={4000}>
-              <PageTransition>
-                <main className="flex min-h-[calc(100vh-4rem)] flex-col justify-center">
-                  {children}
-                </main>
-              </PageTransition>
-              <Footer />
-            </ToastProvider>
-          </SessionProvider>
+          <NextTopLoader
+            color="#60a5fa"
+            initialPosition={0.08}
+            height={3}
+            showSpinner={false}
+            easing="ease"
+            speed={200}
+          />
+          <NavigationMenu />
+          <ToastProvider autoDismissTimeout={4000}>
+            <PageTransition>
+              <main className="flex min-h-[calc(100vh-4rem)] flex-col justify-center">
+                {children}
+              </main>
+            </PageTransition>
+            <Footer />
+          </ToastProvider>
         </ThemeProvider>
       </body>
     </html>

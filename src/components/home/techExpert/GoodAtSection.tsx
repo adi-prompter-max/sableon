@@ -4,24 +4,24 @@ import { AnimatePresence, motion } from "framer-motion"
 const services = [
   {
     id: 1,
-    title: "Build powerful brand experiences",
+    title: "Product Development & Engineering",
     description:
-      "We create interfaces and experiences that bring your vision to life. From concept to deployment, we ensure your brand stands out with pixel-perfect design and seamless functionality.",
+      "From product strategy and UX design to MVP development and full-stack engineering. We build scalable digital products that help startups and businesses grow — fast.",
     image: "/images/homepage/cadogy_building_brand_experiences.jpg",
   },
   {
     id: 2,
-    title: "Manage content that converts, at scale",
+    title: "AI & LLM Application Development",
     description:
-      "Our content management solutions empower your team to update and scale effortlessly. Built-in SEO tools ensure your content performs in search while maintaining brand consistency.",
-    image: "/images/homepage/cadogy_manage_content_that_converts.jpg",
+      "AI product strategy, LLM application development, RAG pipelines, AI agents, and production-grade ML systems. We build real-world AI products from strategy to deployment.",
+    image: "/images/homepage/cadogy_Optimize_for_conversion_with_AI.jpg",
   },
   {
     id: 3,
-    title: "Optimize for conversion with AI",
+    title: "Scale & Optimize",
     description:
-      "Leverage intelligent analytics and AI-powered insights to understand what works. We help you scale winning strategies globally and drive measurable results.",
-    image: "/images/homepage/cadogy_Optimize_for_conversion_with_AI.jpg",
+      "QA, testing, performance optimization, MLOps, deployment pipelines, and ongoing maintenance. We make sure your product stays fast, reliable, and ready to scale.",
+    image: "/images/homepage/cadogy_manage_content_that_converts.jpg",
   },
 ]
 

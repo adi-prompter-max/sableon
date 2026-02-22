@@ -11,12 +11,12 @@ export const dynamicParams = true
 export const metadata: Metadata = {
   title: `Privacy Policy - ${siteConfig.name}`,
   description:
-    "Learn about how Cadogy collects, uses, and protects your personal information. Our comprehensive privacy policy outlines our commitment to data security.",
-  keywords: ["privacy policy", "data protection", "personal information", "privacy rights", "data security", "Cadogy privacy"],
+    "Learn about how Sableon collects, uses, and protects your personal information. Our comprehensive privacy policy outlines our commitment to data security.",
+  keywords: ["privacy policy", "data protection", "personal information", "privacy rights", "data security", "Sableon privacy"],
   openGraph: {
     title: `Privacy Policy - ${siteConfig.name}`,
     description:
-      "Learn about how Cadogy collects, uses, and protects your personal information. Our comprehensive privacy policy outlines our commitment to data security.",
+      "Learn about how Sableon collects, uses, and protects your personal information. Our comprehensive privacy policy outlines our commitment to data security.",
     url: `${siteConfig.url.base}/policies/privacy-policy`,
     images: [
       {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `Privacy Policy | ${siteConfig.name}`,
     description:
-      "Learn about how Cadogy collects, uses, and protects your personal information. Our comprehensive privacy policy outlines our commitment to data security.",
+      "Learn about how Sableon collects, uses, and protects your personal information. Our comprehensive privacy policy outlines our commitment to data security.",
     images: [siteConfig.ogImage],
   },
 }
@@ -42,7 +42,7 @@ const PrivacyPolicy = () => {
         <h1 className="text-[50px]">Privacy Policy</h1>
       </div>
       <p>
-        Welcome to Cadogy&apos;s Privacy Policy page. Your privacy is critically
+        Welcome to Sableon&apos;s Privacy Policy page. Your privacy is critically
         important to us.
       </p>
 
@@ -71,7 +71,7 @@ const PrivacyPolicy = () => {
         <p>We use the information we collect to:</p>
         <ul className="list-disc pl-5">
           <li>Provide and maintain our services.</li>
-          <li>Improve and personalize your experience on Cadogy.</li>
+          <li>Improve and personalize your experience on Sableon.</li>
           <li>
             Communicate with you regarding updates, promotions, or changes in
             services.
@@ -103,7 +103,7 @@ const PrivacyPolicy = () => {
         <h2 className="mb-4 text-2xl font-semibold">Contact Us</h2>
         <p>
           If you have any questions or concerns about our privacy practices,
-          please contact us at support@cadogy.com.
+          please contact us at support@sableon.com.
         </p>
       </section>
     </div>

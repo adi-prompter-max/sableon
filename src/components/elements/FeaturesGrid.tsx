@@ -87,7 +87,7 @@ export function FeaturesGrid() {
         <p className="mt-6 text-lg leading-8 text-slate-300">
           Whether you&apos;re generating media content, writing stories and
           scripts, generating application code or researching the human genome,
-          The API by Cadogy connects you to everything and everyone.
+          The API by Sableon connects you to everything and everyone.
         </p>
       </div>
 
@@ -131,7 +131,7 @@ export function FeaturesGrid() {
           Ready to Get Started?
         </h3>
         <p className="mt-4 text-slate-400">
-          Clients and Cadogy Access members have access to accessing our
+          Clients and Sableon Access members have access to accessing our
           innovative API, with more information coming soon.
         </p>
         <div className="mt-8">

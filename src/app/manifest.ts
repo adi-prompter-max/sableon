@@ -6,7 +6,7 @@ import { siteConfig } from "@/config/site"
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteConfig.name,
-    short_name: 'Cadogy',
+    short_name: 'Sableon',
     description: siteConfig.description,
     start_url: '/',
     display: 'standalone',
@@ -22,7 +22,7 @@ export default function manifest(): MetadataRoute.Manifest {
     related_applications: [
       {
         platform: 'web',
-        url: env.NEXT_PUBLIC_APP_URL || 'https://wwwcadogy.com',
+        url: env.NEXT_PUBLIC_APP_URL || 'https://www.sableon.com',
       },
     ],
   }

@@ -540,7 +540,7 @@ const WhoWeAreContent = () => {
           </motion.div>
 
           <div className="mt-16 space-y-16">
-            {/* Charles Knapp Card */}
+            {/* Gautam Chauhan Card */}
             <motion.div
               className="overflow-hidden rounded-xl border border-border bg-card shadow-sm"
               initial={{ opacity: 0, y: 20 }}
@@ -556,13 +556,13 @@ const WhoWeAreContent = () => {
                         src={addCacheBuster(
                           "/images/authors/charles_k_author.jpg"
                         )}
-                        alt="Charles Knapp"
+                        alt="Gautam Chauhan"
                         className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                       />
                     </div>
                     <div className="mt-4 text-center">
                       <h3 className="text-xl font-medium text-white">
-                        Charles Knapp
+                        Gautam Chauhan
                       </h3>
                       <p className="text-sm text-white/70">Co-Founder · CTO</p>
                     </div>
@@ -575,13 +575,13 @@ const WhoWeAreContent = () => {
                   </div>
                   <div className="space-y-4">
                     <p className="text-muted-foreground">
-                      Charles likes building things that are hard to break — and
+                      Gautam likes building things that are hard to break — and
                       then trying to break them anyway. He lives where security,
                       infrastructure, and weird edge cases overlap, turning
                       messy systems into fast, reliable, and resilient ones.
                     </p>
                     <p className="text-muted-foreground">
-                      At Cadogy, Charles leads the technical side of the house:
+                      At Sableon, Gautam leads the technical side of the house:
                       architecture, security, and hands-on engineering. From DNS
                       hardening and DDoS mitigation to custom apps, automation,
                       and internal tools, he is usually the one wiring
@@ -645,7 +645,7 @@ const WhoWeAreContent = () => {
                         </svg>
                       </a>
                       <a
-                        href="mailto:charles@cadogy.com"
+                        href="mailto:gautam@sableon.com"
                         aria-label="Email Contact"
                         className="rounded-lg border border-border bg-card/80 p-2 transition-colors hover:bg-card"
                       >
@@ -669,7 +669,7 @@ const WhoWeAreContent = () => {
               </div>
             </motion.div>
 
-            {/* Dylan Safra Card */}
+            {/* Keshav Chauhan Card */}
             <motion.div
               className="overflow-hidden rounded-xl border border-border bg-card shadow-sm"
               initial={{ opacity: 0, y: 20 }}
@@ -685,13 +685,13 @@ const WhoWeAreContent = () => {
                         src={addCacheBuster(
                           "/images/authors/dylan_s_author.jpg"
                         )}
-                        alt="Dylan Safra"
+                        alt="Keshav Chauhan"
                         className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                       />
                     </div>
                     <div className="mt-4 text-center">
                       <h3 className="text-xl font-medium text-white">
-                        Dylan Safra
+                        Keshav Chauhan
                       </h3>
                       <p className="text-sm text-white/70">
                         Co-Founder · CFO &amp; Strategy
@@ -706,13 +706,13 @@ const WhoWeAreContent = () => {
                   </div>
                   <div className="space-y-4">
                     <p className="text-muted-foreground">
-                      Dylan thinks in numbers, systems, and outcomes. He keeps
+                      Keshav thinks in numbers, systems, and outcomes. He keeps
                       projects grounded in reality — making sure the ideas are
                       not just exciting, but sustainable, shippable, and aligned
                       with the bigger picture.
                     </p>
                     <p className="text-muted-foreground">
-                      At Cadogy, Dylan steers finance, operations, and product
+                      At Sableon, Keshav steers finance, operations, and product
                       strategy. From pricing models and forecasting to search,
                       funnels, and client roadmaps, he focuses on the levers
                       that actually move the needle while keeping timelines,
@@ -775,7 +775,7 @@ const WhoWeAreContent = () => {
                         </svg>
                       </a>
                       <a
-                        href="mailto:dylan@cadogy.com"
+                        href="mailto:keshav@sableon.com"
                         aria-label="Email Contact"
                         className="rounded-lg border border-border bg-card/80 p-2 transition-colors hover:bg-card"
                       >

@@ -1,7 +1,7 @@
 # Learnings & Discoveries
 
 ## Project Overview
-**Project**: Cadogy Homepage Redesign
+**Project**: Sableon Homepage Redesign
 **Started**: 2026-01-30
 **Design Inspiration**: Stripe.com
 

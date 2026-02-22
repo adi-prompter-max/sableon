@@ -7,7 +7,7 @@ export const SERVICES_CONFIG: BentoCardProps[] = [
       "We create interfaces and experiences that bring your vision to life with pixel-perfect design and seamless functionality.",
     variant: "feature",
     size: "large",
-    image: "/images/homepage/cadogy_building_brand_experiences.jpg",
+    image: "/images/homepage/sableon_building_brand_experiences.jpg",
   },
   {
     title: "Content Management",

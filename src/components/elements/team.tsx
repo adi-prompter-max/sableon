@@ -3,20 +3,19 @@ import Image from "next/image"
 export function TeamSection() {
   const teamMembers = [
     {
-      name: "Charles Knapp",
-      role: "Lead Developer",
-      image: "https://avatars.githubusercontent.com/u/115595915?v=4",
+      name: "Gautam Chauhan",
+      role: "Co-Founder & CEO",
+      image: "/images/authors/gautam_chauhan.jpg",
     },
     {
-      name: "Dylan Safra",
-      role: "Lead Developer",
-      image: "https://avatars.githubusercontent.com/u/106191331?v=4",
+      name: "Keshav Chauhan",
+      role: "Co-Founder & CTO",
+      image: "/images/authors/keshav_chauhan.jpg",
     },
     {
-      name: "Rouge Knapfra",
-      role: "Office Support",
-      image:
-        "https://www.hshv.org/wp-content/uploads/formidable/105/IMG_7026.jpeg",
+      name: "Aditya Pratap Singh",
+      role: "Co-Founder & COO",
+      image: "/images/authors/aditya_pratap_singh.jpg",
     },
   ]
 
@@ -32,9 +31,9 @@ export function TeamSection() {
               src={member.image}
               alt={member.name}
               className="mx-auto mb-4 h-32 w-32 rounded-md"
-              width={128} // Set width based on the size you want to display
-              height={128} // Set height based on the size you want to display
-              objectFit="cover" // Ensures the image scales properly
+              width={128}
+              height={128}
+              objectFit="cover"
             />
             <h3 className="text-lg font-medium text-gray-100">{member.name}</h3>
             <p className="text-sm text-gray-400">{member.role}</p>

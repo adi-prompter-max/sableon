@@ -7,21 +7,21 @@ const tabs = [
     title: "Build",
     description:
       "Build a new site from the ground up — including its entire design system — modify its structure and design with ease, and generate code to power dynamic web experiences.",
-    image: "/images/homepage/tabs/cadogy_building_your_website.webp",
+    image: "/images/homepage/tabs/sableon_building_your_website.webp",
   },
   {
     id: 2,
     title: "Manage",
     description:
       "Manage the content of your site with the ability to generate copy and CMS collection items individually or in bulk to drive traffic and engagement.",
-    image: "/images/homepage/tabs/cadogy_managing_your_website_content.jpg",
+    image: "/images/homepage/tabs/sableon_managing_your_website_content.jpg",
   },
   {
     id: 3,
     title: "Optimize",
     description:
       "Optimize your site for all audiences by auditing and improving SEO and AEO — and continually testing and improving your site based on CRO best practices.",
-    image: "/images/homepage/tabs/cadogy_keyword_optimization_of_website.webp",
+    image: "/images/homepage/tabs/sableon_keyword_optimization_of_website.webp",
   },
 ]
 

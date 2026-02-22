@@ -15,7 +15,7 @@ const HeroSection = () => {
         className="absolute inset-0 h-full w-full object-cover opacity-100"
       >
         <source
-          src="/videos/cadogy_who_we_are_background.mp4"
+          src="/videos/sableon_who_we_are_background.mp4"
           type="video/mp4"
         />
       </video>
@@ -30,7 +30,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="mb-8 text-5xl font-medium tracking-tight text-foreground md:text-7xl lg:text-8xl"
           >
-            We work at high speed with high standards.
+            Execution-first. Speed meets quality.
           </motion.h1>
 
           <motion.p
@@ -39,7 +39,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mx-auto mb-16 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl"
           >
-            We ship fast, adapt instantly, and outperform slower competitors.
+            We help startups and modern businesses turn ideas into scalable digital products — from discovery to deployment.
           </motion.p>
 
           <motion.div
@@ -55,8 +55,6 @@ const HeroSection = () => {
               Start a project
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
-
-            {/* <span className="text-border">|</span> */}
           </motion.div>
         </div>
       </div>

@@ -1,66 +1,15 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Github, Instagram, Linkedin, Mail, MapPin, Shield } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
+import { getSiteSettings } from "@/lib/get-site-settings"
+
+const settings = getSiteSettings()
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
-  const [siteName, setSiteName] = useState(siteConfig.name)
-  const [footerDescription, setFooterDescription] = useState(
-    "Crafting exceptional digital experiences through innovative web development, secure infrastructure, and custom solutions for businesses in South Florida and beyond."
-  )
-  const [contactEmail, setContactEmail] = useState("hello@cadogy.com")
-  const [contactAddress, setContactAddress] = useState("Pompano Beach, FL")
-  const [socialInstagram, setSocialInstagram] = useState(
-    "https://www.instagram.com/cadogyweb"
-  )
-  const [socialGithub, setSocialGithub] = useState(
-    "https://www.github.com/cadogy"
-  )
-  const [socialLinkedin, setSocialLinkedin] = useState(
-    "https://www.linkedin.com/company/cadogy"
-  )
-
-  useEffect(() => {
-    const fetchSettings = async () => {
-      try {
-        const response = await fetch("/api/settings")
-        if (response.ok) {
-          const data = await response.json()
-          if (data.settings) {
-            if (data.settings.siteName) {
-              setSiteName(data.settings.siteName)
-            }
-            if (data.settings.footerDescription) {
-              setFooterDescription(data.settings.footerDescription)
-            }
-            if (data.settings.contactEmail) {
-              setContactEmail(data.settings.contactEmail)
-            }
-            if (data.settings.contactAddress) {
-              setContactAddress(data.settings.contactAddress)
-            }
-            if (data.settings.socialInstagram) {
-              setSocialInstagram(data.settings.socialInstagram)
-            }
-            if (data.settings.socialGithub) {
-              setSocialGithub(data.settings.socialGithub)
-            }
-            if (data.settings.socialLinkedin) {
-              setSocialLinkedin(data.settings.socialLinkedin)
-            }
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching settings:", error)
-      }
-    }
-
-    fetchSettings()
-  }, [])
 
   return (
     <footer className="relative w-full border-t bg-background">
@@ -92,7 +41,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              {footerDescription}
+              {settings.footerDescription}
             </p>
           </div>
 
@@ -105,14 +54,6 @@ export function Footer() {
                   className="text-muted-foreground transition-colors hover:text-foreground"
                 >
                   About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/articles"
-                  className="text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  Blog & Articles
                 </Link>
               </li>
               <li>
@@ -153,21 +94,21 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-muted-foreground" />
-                <span className="text-muted-foreground">{contactAddress}</span>
+                <span className="text-muted-foreground">{settings.contactAddress}</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
                 <a
-                  href={`mailto:${contactEmail}`}
+                  href={`mailto:${settings.contactEmail}`}
                   className="text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  {contactEmail}
+                  {settings.contactEmail}
                 </a>
               </li>
             </ul>
             <div className="mt-4 flex space-x-3">
               <a
-                href={socialInstagram}
+                href={settings.socialInstagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
@@ -178,7 +119,7 @@ export function Footer() {
                 </div>
               </a>
               <a
-                href={socialGithub}
+                href={settings.socialGithub}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
@@ -189,7 +130,7 @@ export function Footer() {
                 </div>
               </a>
               <a
-                href={socialLinkedin}
+                href={settings.socialLinkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
@@ -206,11 +147,11 @@ export function Footer() {
         <div className="mt-12 border-t border-border/40 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-xs text-muted-foreground">
-              © {currentYear} {siteName}. All rights reserved.
+              &copy; {currentYear} {settings.siteName}. All rights reserved.
             </p>
             <div className="flex items-center gap-1 text-xs text-muted-foreground">
               <Shield className="h-3 w-3" />
-              <span>Secure & Trusted Development Partner</span>
+              <span>Your Execution-First Development Partner</span>
             </div>
           </div>
         </div>

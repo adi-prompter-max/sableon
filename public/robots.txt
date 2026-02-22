@@ -1,4 +1,4 @@
-# Cadogy.com robots.txt
+# Sableon.com robots.txt
 User-agent: *
 Allow: /
 
@@ -26,4 +26,4 @@ Disallow: /test/
 Disallow: /dev/
 
 # Sitemaps
-Sitemap: https://www.cadogy.com/sitemap-index.xml
+Sitemap: https://www.sableon.com/sitemap-index.xml

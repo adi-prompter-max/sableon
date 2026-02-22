@@ -16,7 +16,7 @@ const OurCharterContent = () => {
           className="absolute inset-0 h-full w-full object-cover opacity-100"
         >
           <source
-            src="/videos/cadogy_who_we_are_background.mp4"
+            src="/videos/sableon_who_we_are_background.mp4"
             type="video/mp4"
           />
         </video>

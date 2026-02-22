@@ -28,7 +28,7 @@ const ImpactSection = () => {
             </motion.div>
 
             <h2 className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-              The power of 200 developers. The agility of a boutique team.
+              Startup speed. Enterprise quality. AI-powered delivery.
             </h2>
           </motion.div>
 
@@ -41,7 +41,7 @@ const ImpactSection = () => {
           >
             <p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
               We leverage AI to multiply our capabilities, delivering
-              enterprise-scale results with small agency efficiency. What
+              production-grade products with small agency efficiency. What
               traditionally requires massive teams and budgets, we accomplish
               faster, smarter, and more cost-effectively.
             </p>
@@ -60,10 +60,10 @@ const ImpactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-foreground">
-                    Lightning Fast
+                    Rapid MVP Delivery
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    Rapid development cycles
+                    From idea to launch, fast
                   </p>
                 </div>
               </motion.div>
@@ -83,7 +83,7 @@ const ImpactSection = () => {
                     Expert Team
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    Specialized knowledge
+                    Engineering + AI expertise
                   </p>
                 </div>
               </motion.div>

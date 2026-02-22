@@ -11,7 +11,7 @@ export const CASE_STUDIES: CaseStudyCardProps[] = [
       { label: "New Users", value: "25K+" },
       { label: "Conversion Rate", value: "4.2%" },
     ],
-    link: "/articles",
+    link: "/contact",
   },
   {
     title: "Healthcare Portal",
@@ -23,7 +23,7 @@ export const CASE_STUDIES: CaseStudyCardProps[] = [
       { label: "Users", value: "10K+" },
       { label: "Satisfaction", value: "98%" },
     ],
-    link: "/articles",
+    link: "/contact",
   },
   {
     title: "FinTech Platform",
@@ -35,6 +35,6 @@ export const CASE_STUDIES: CaseStudyCardProps[] = [
       { label: "Transactions", value: "1M+" },
       { label: "Accuracy", value: "99.9%" },
     ],
-    link: "/articles",
+    link: "/contact",
   },
 ]

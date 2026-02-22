@@ -1,12 +1,13 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowUpRight, Github, Instagram, Linkedin } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
+import { getSiteSettings } from "@/lib/get-site-settings"
 
 // Animation variants
 const containerVariants = {
@@ -48,63 +49,10 @@ const socialIconVariants = {
   },
 }
 
+const settings = getSiteSettings()
+
 export function Footer() {
-  const [siteName, setSiteName] = useState(siteConfig.name)
-  const [hoveredText, setHoveredText] = useState(siteConfig.name)
-  const [footerDescription, setFooterDescription] = useState(
-    "Crafting exceptional digital experiences through innovative web development, secure infrastructure, and custom solutions for businesses in South Florida and beyond."
-  )
-  const [contactEmail, setContactEmail] = useState("hello@cadogy.com")
-  const [contactAddress, setContactAddress] = useState("Pompano Beach, FL")
-  const [socialInstagram, setSocialInstagram] = useState(
-    "https://www.instagram.com/cadogyweb"
-  )
-  const [socialGithub, setSocialGithub] = useState(
-    "https://www.github.com/cadogy"
-  )
-  const [socialLinkedin, setSocialLinkedin] = useState(
-    "https://www.linkedin.com/company/cadogy"
-  )
-
-  useEffect(() => {
-    const fetchSettings = async () => {
-      try {
-        const response = await fetch("/api/settings")
-        if (response.ok) {
-          const data = await response.json()
-          if (data.settings) {
-            if (data.settings.siteName) {
-              const name = data.settings.siteName.split(" - ")[0]
-              setSiteName(name)
-              setHoveredText(name)
-            }
-            if (data.settings.footerDescription) {
-              setFooterDescription(data.settings.footerDescription)
-            }
-            if (data.settings.contactEmail) {
-              setContactEmail(data.settings.contactEmail)
-            }
-            if (data.settings.contactAddress) {
-              setContactAddress(data.settings.contactAddress)
-            }
-            if (data.settings.socialInstagram) {
-              setSocialInstagram(data.settings.socialInstagram)
-            }
-            if (data.settings.socialGithub) {
-              setSocialGithub(data.settings.socialGithub)
-            }
-            if (data.settings.socialLinkedin) {
-              setSocialLinkedin(data.settings.socialLinkedin)
-            }
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching settings:", error)
-      }
-    }
-
-    fetchSettings()
-  }, [])
+  const [hoveredText, setHoveredText] = useState(settings.siteName)
 
   const alphabet =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
@@ -128,16 +76,16 @@ export function Footer() {
   }
 
   const handleMouseEnter = () => {
-    textCipherEffect(siteName)
+    textCipherEffect(settings.siteName)
   }
 
   const handleMouseLeave = () => {
-    setHoveredText(siteName)
+    setHoveredText(settings.siteName)
   }
 
   return (
     <footer className="relative w-full bg-neutral-900/10 backdrop-blur-sm dark:bg-neutral-900/40">
-      {/* Full width background  image blend*/}
+      {/* Full width background image blend */}
       <div
         className="absolute inset-0 z-[-1] h-full w-full bg-cover bg-[8%_100%] bg-no-repeat opacity-20 mix-blend-luminosity lg:bg-[100%_80%]"
         style={{
@@ -160,8 +108,8 @@ export function Footer() {
             <div className="mb-4 flex items-center">
               <div className="relative h-8 w-8 md:h-10 md:w-10">
                 <Image
-                  src="/images/assets/logos/cadogy-shield.svg"
-                  alt="Cadogy Logo"
+                  src="/images/assets/logos/sableon-shield.svg"
+                  alt="Sableon Logo"
                   fill
                   className="object-contain"
                 />
@@ -175,7 +123,7 @@ export function Footer() {
               </h2>
             </div>
             <p className="max-w-md text-sm text-muted-foreground md:text-base">
-              {footerDescription}
+              {settings.footerDescription}
             </p>
           </motion.div>
 
@@ -198,27 +146,6 @@ export function Footer() {
                   }
                 >
                   <span>About Us</span>
-                  <motion.span
-                    className="ml-1 inline-block"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ArrowUpRight className="h-3 w-3 md:h-4 md:w-4" />
-                  </motion.span>
-                </Link>
-              </motion.li>
-              <motion.li variants={itemVariants}>
-                <Link
-                  href="/articles"
-                  className="flex items-center text-sm text-muted-foreground transition-colors hover:text-foreground md:text-base"
-                  tabIndex={0}
-                  aria-label="Blog & Articles"
-                  onKeyDown={(e) =>
-                    e.key === "Enter" && e.currentTarget.click()
-                  }
-                >
-                  <span>Blog & Articles</span>
                   <motion.span
                     className="ml-1 inline-block"
                     initial={{ x: 0 }}
@@ -310,13 +237,14 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="mt-10 flex flex-col justify-between gap-6 border-border pt-6 md:mt-16 md:flex-row md:pt-10 lg:items-center">
           <p className="text-left text-xs text-muted-foreground md:text-sm">
-            © {new Date().getFullYear()} {siteName}. All rights reserved.
+            &copy; {new Date().getFullYear()} {settings.siteName}. All rights
+            reserved.
           </p>
 
           {/* Social Icons */}
           <div className="flex items-center space-x-6">
             <motion.a
-              href={socialInstagram}
+              href={settings.socialInstagram}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground transition hover:text-foreground"
@@ -329,7 +257,7 @@ export function Footer() {
               <Instagram className="h-5 w-5 md:h-6 md:w-6" />
             </motion.a>
             <motion.a
-              href={socialGithub}
+              href={settings.socialGithub}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground transition hover:text-foreground"
@@ -342,7 +270,7 @@ export function Footer() {
               <Github className="h-5 w-5 md:h-6 md:w-6" />
             </motion.a>
             <motion.a
-              href={socialLinkedin}
+              href={settings.socialLinkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground transition hover:text-foreground"
