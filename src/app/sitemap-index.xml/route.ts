@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server'
-import { env } from "@/env.mjs"
 
-const baseUrl = env.NEXT_PUBLIC_APP_URL || 'https://www.sableon.com'
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://www.sableon.com'
 
 export async function GET() {
   const currentDate = new Date().toISOString()

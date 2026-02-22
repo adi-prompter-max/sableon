@@ -1,6 +1,6 @@
 import { SiteConfig } from "@/types"
 
-import { env } from "@/env.mjs"
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://www.sableon.com"
 
 export const siteConfig: SiteConfig = {
   name: "Sableon",
@@ -21,8 +21,8 @@ export const siteConfig: SiteConfig = {
     "AI consulting and deployment",
   ],
   url: {
-    base: env.NEXT_PUBLIC_APP_URL,
-    author: env.NEXT_PUBLIC_APP_URL,
+    base: baseUrl,
+    author: baseUrl,
   },
-  ogImage: `${env.NEXT_PUBLIC_APP_URL}/images/sableon_opengraph_banner.jpg`,
+  ogImage: `${baseUrl}/images/sableon_opengraph_banner.jpg`,
 }
