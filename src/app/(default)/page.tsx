@@ -35,11 +35,6 @@ export default function Home() {
 
   return (
     <div className="bg-background">
-      {/* Hero Section */}
-      <section className="w-full">
-        <HeroCarousel />
-      </section>
-
       {/* Text Slide */}
       <section className="mb-24 w-full bg-background">
         <TextSlideEffect />
